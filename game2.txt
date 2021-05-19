@@ -1,0 +1,102 @@
+package Framework;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Game {
+
+    public static class Builder{
+
+        private Display display;
+        private List<GameObject> gameObjects;
+        private Input input;
+        private Player player;
+        private PlayerController playerController;
+
+
+
+        public Builder(){
+            input = new Input();
+            display = new Display(input);
+            gameObjects = new ArrayList<>();
+
+        }
+
+
+        public Builder addPlayer(Player player){
+            this.player = player;
+            playerController = new PlayerController(input);
+            player.setController(playerController);
+            gameObjects.add(player);
+            return this;
+        }
+
+
+        public Game build(){return new Game(this);}
+
+    }
+
+
+
+    private Display display;
+    private List<GameObject> gameObjects;
+    private Input input;
+    private Player player;
+    private PlayerController playerController;
+
+
+
+
+
+
+    private Game(Builder builder){
+        this.input = builder.input;
+        this.gameObjects = builder.gameObjects;
+        this.display = builder.display;
+        this.player = builder.player;
+        this.playerController = builder.playerController;
+    }
+
+    public void addPlayer(Player player){
+        this.player = player;
+        gameObjects.add(player);
+
+    }
+
+    public void addNpc(Npc npc, int posx, int posy){
+        gameObjects.add(npc);
+        GameObject go = gameObjects.get(gameObjects.indexOf(npc)); //kan ikke bruke samme npc fler ganger
+        go.setPosition(posx, posy);
+    }
+
+
+
+    public void setMovementkeys(char right,char left,char up,char down){
+
+    }
+
+
+
+    public void setSize(int width, int height){
+        display.setSize(width,height);
+
+    }
+
+    public void start(){
+        new Thread(new GameLoop(this)).start();
+    }
+
+    public void update(){
+        gameObjects.forEach(gameObject -> gameObject.update());
+    }
+
+    public void render(){
+        display.render(this);
+    }
+
+    public List<GameObject> getGameObjects() {
+        return gameObjects;
+    }
+
+
+}
