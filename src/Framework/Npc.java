@@ -38,8 +38,8 @@ public class Npc extends GameObject {
         /**
          * Adds a damage variable to an Ability <br>
          * @param name Sets the damage variable <br> <br>
-         * Usage: <br>
-         * new Ability.Builder(String name).addDamage(int damage).build();
+         * Example usage: <br>
+         * Ability ability = new Ability.Builder(String name).addDamage(int damage).build();
          * */
         //TODO dette finnes ikke i player hvorfor?
         public Builder addAttribute(String name, int value){
@@ -50,8 +50,8 @@ public class Npc extends GameObject {
         /**
          * Adds an Ability object to an Npc <br>
          * @param ability Sets the Ability variable <br> <br>
-         * Usage: <br>
-         * new Npc.Builder(String name).addAbility(Ability ability).build();
+         * Example usage: <br>
+         * Npc npc = new Npc.Builder(String name).addAbility(Ability ability).build();
          * */
         public Builder addAbility(Ability ability){
             abilityArray.add(ability);
@@ -61,8 +61,8 @@ public class Npc extends GameObject {
         /**
          * Adds an Ability object to an Npc <br>
          *  Sets the Ability variable <br> <br>
-         * Usage: <br>
-         * new Npc.Builder(String name).addAbility(Ability ability).build();
+         * Example usage: <br>
+         * Npc npc = new Npc.Builder(String name).addAbility(Ability ability).build();
          * */
         //TODO skal dette være sprite??
         public Builder addImage(){
@@ -73,8 +73,8 @@ public class Npc extends GameObject {
         /**
          * Adds a movement pattern to an Npc <br>
          * @param npcMovement Sets the npcMovement variable <br> <br>
-         * Usage: <br>
-         * new Npc.Builder(String name).addMovement(NpcMovement npcMovement).build();
+         * Example usage: <br>
+         * Npc npc = new Npc.Builder(String name).addMovement(NpcMovement npcMovement).build();
          * */
         //TODO revisit
         public Builder addMovement(NpcMovement npcMovement){
@@ -85,14 +85,21 @@ public class Npc extends GameObject {
         /**
          * Adds a level to an Npc <br>
          * @param level Sets the level variable <br> <br>
-         * Usage: <br>
-         * new Npc.Builder(String name).addlevel(int level).build();
+         * Example usage: <br>
+         * Npc npc = new Npc.Builder(String name).addlevel(int level).build();
          * */
         public Builder addLevel(int level){
             this.level = level;
             return this;
         }
 
+        /**
+         * Adds a level to an Npc <br>
+         * @param width Sets the width variable
+         * @param height Sets the height variable <br> <br>
+         * Example usage: <br>
+         * Npc npc = new Npc.Builder(String name).addlevel(int level).build();
+         * */
         public Builder addSize(int width, int height){
             this.width = width;
             this.height = height;
@@ -100,8 +107,8 @@ public class Npc extends GameObject {
         }
 
         /**
-         * Creates a Npc object
-         * @return  Returns a Npc object with the given values.
+         * Creates an Npc object
+         * @return  Returns an Npc object with the given values.
          * */
         public Npc build(){
             return new Npc(this);
@@ -115,9 +122,7 @@ public class Npc extends GameObject {
     private Sprite image;
     private NpcMovement npcMovement;
 
-    /**
-     * Constructs a new non playable character
-     */
+
     private Npc(Builder builder) {
         this.name = builder.name;
         this.attribute = builder.attribute;

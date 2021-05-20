@@ -24,10 +24,10 @@ public class Ability {
         }
 
         /**
-         * This method Adds a damage variable to an Ability <br>
+         * Adds a damage variable to an Ability <br>
          * @param damage Sets the damage variable <br> <br>
-         * Usage: <br>
-         * new Ability.Builder(String name).addDamage(int damage).build();
+         * Example usage: <br>
+         * Ability ability = new Ability.Builder(String name).addDamage(int damage).build();
          * */
         public Builder addDamage(int damage) {
             this.damage = damage;
@@ -35,10 +35,10 @@ public class Ability {
         }
 
         /**
-         * This method adds a manaCost variable to an Ability <br>
+         * Adds a manaCost variable to an Ability <br>
          * @param manaCost Sets the manaCost variable <br> <br>
-         * Usage: <br>
-         * Ability.Builder(String name).addManaCost(int manaCost).build();
+         * Example usage: <br>
+         * Ability ability = Ability.Builder(String name).addManaCost(int manaCost).build();
          * */
         public Builder addManaCost(final int manaCost) {
             this.manaCost = manaCost;
@@ -46,10 +46,10 @@ public class Ability {
         }
 
         /**
-         * This method adds a cooldown variable to an Ability <br>
+         * Adds a cooldown variable to an Ability <br>
          * @param cooldown Sets the cooldown variable <br> <br>
-         * Usage: <br>
-         * Ability.Builder(String name).addCooldown(int cooldown).build();
+         * Example usage: <br>
+         * Ability ability = new Ability.Builder(String name).addCooldown(int cooldown).build();
          * */
         public Builder addCooldown(int cooldown) {
             this.cooldown = cooldown;
@@ -57,7 +57,7 @@ public class Ability {
         }
 
         /**
-         * This method creates an Ability object
+         * Creates an Ability object
          * @return  Returns an Ability object with the given values.
          * */
         public Ability build(){
