@@ -62,7 +62,4 @@ public class Weapon {
         this.ability = builder.ability;
         this.sprite = builder.sprite;
     }
-
-
-    //overwriter spriten til character, lagre den gamle
 }

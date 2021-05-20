@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Npc represents a non playable character
+ * An Npc object
  * */
 public class Npc extends GameObject {
+
     /**
      * Inner class to create an Npc object
      */
-
     public static class Builder{
         private String name;
         private final HashMap<String, Integer> attribute = new HashMap<>();
@@ -36,10 +36,11 @@ public class Npc extends GameObject {
         }
 
         /**
-         * Adds a damage variable to an Ability <br>
-         * @param name Sets the damage variable <br> <br>
+         * Adds an attribute variable to an Npc <br>
+         * @param name Sets the attribute name <br>
+         * @param value sets the attribute value <br><br>
          * Example usage: <br>
-         * Ability ability = new Ability.Builder(String name).addDamage(int damage).build();
+         * Npc npc = new Npc.Builder(String name).addAttribute(String name, int value).build();
          * */
         //TODO dette finnes ikke i player hvorfor?
         public Builder addAttribute(String name, int value){
@@ -140,7 +141,7 @@ public class Npc extends GameObject {
     }
 
     @Override
-    public Image getSprite() {
+    public Image createDefaultSprite() {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = image.createGraphics();
 
@@ -168,8 +169,6 @@ public class Npc extends GameObject {
         this.name = name;
     }
      */
-
-
 
 }
 

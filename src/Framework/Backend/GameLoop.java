@@ -2,6 +2,10 @@ package Framework.Backend;
 
 import Framework.Game;
 
+/**
+ * The Game loop <br>
+ * Gets created by the Game class
+ */
 public class GameLoop implements Runnable{
 
     private final Game game;
@@ -12,10 +16,17 @@ public class GameLoop implements Runnable{
     private long nextStatTime;
     private int fps, ups; //updates per second
 
+    /**
+     * Constructor for GameLoop
+     * @param game The game to start a game loop for
+     */
     public GameLoop(Game game){
         this.game = game;
     }
 
+    /**
+     * Runs the game loop
+     */
     @Override
     public void run() {
         running = true;
@@ -40,6 +51,9 @@ public class GameLoop implements Runnable{
         }
     }
 
+    /**
+     * Prints statistics of the game loop
+     */
     private void printStats() {
         if(System.currentTimeMillis() > nextStatTime){
             System.out.printf("FPS: %d%n", fps);
@@ -48,11 +62,17 @@ public class GameLoop implements Runnable{
         }
     }
 
+    /**
+     * Updates the game
+     */
     private void update() {
         game.update();
         ups++;
     }
 
+    /**
+     * Renders the game
+     */
     private void render() {
         game.render();
         fps++;

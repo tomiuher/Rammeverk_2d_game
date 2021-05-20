@@ -4,6 +4,7 @@ import Framework.Backend.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
 
 /**
  * A Player object which is controlled by the user
@@ -14,8 +15,8 @@ public class Player extends GameObject {
     /**
      * Inner class to create a Player object
      */
-
     public static class Builder{
+        private final HashMap<String, Integer> attribute = new HashMap<>();
         private String name;
         private int posX, posY, movementSpeed, level, xp;
         private int width = 50;
@@ -42,7 +43,7 @@ public class Player extends GameObject {
          * @param width Sets the width variable 
          * @param height Sets the height variable <br> <br>     
          * Example usage: <br>
-         * new Player.Builder(String name).addSize(int width, int height).build();
+         * Player player = new Player.Builder(String name).addSize(int width, int height).build();
          * */
         public Builder addSize(int width, int height){
             this.width = width;
@@ -56,7 +57,7 @@ public class Player extends GameObject {
          * @param posX Sets the X variable 
          * @param posY Sets the Y variable <br> <br>     
          * Example usage: <br>
-         * new Player.Builder(String name).addPosition(int posX, int posY).build();
+         * Player player = new Player.Builder(String name).addPosition(int posX, int posY).build();
          * */
         public Builder addPosition(int posX, int posY){
             this.posX = posX;
@@ -69,7 +70,7 @@ public class Player extends GameObject {
          * Has a default value of 5 if not set <br>
          * @param movementSpeed Sets the movementSpeed variable <br> <br>     
          * Example usage: <br>
-         * new Player.Builder(String name).addMovementSpeed(int movementSpeed).build();
+         * Player player = new Player.Builder(String name).addMovementSpeed(int movementSpeed).build();
          * */
         public Builder addMovementSpeed(int movementSpeed){
             this.movementSpeed = movementSpeed;
@@ -81,7 +82,7 @@ public class Player extends GameObject {
          * Used to add either walking or running <br>
          * @param movementSpeedMultiplier Sets the movementSpeedMultiplier variable <br> <br>
          * Example usage: <br>
-         * new Player.Builder(String name).addMovementSpeedMultiplier(double movementSpeedMultiplier).build();
+         * Player player = new Player.Builder(String name).addMovementSpeedMultiplier(double movementSpeedMultiplier).build();
          * */
         public Builder addMovementSpeedMultiplier(double movementSpeedMultiplier){
             this.movementSpeedMultiplier = movementSpeedMultiplier;
@@ -93,7 +94,7 @@ public class Player extends GameObject {
          * Sprite is set to a square by default <br>
          * @param sprite Takes a Sprite object and adds it to a Player<br> <br>
          * Example usage: <br>
-         * new Player.Builder(String name).addSprite(Sprite sprite).build();
+         * Player player = new Player.Builder(String name).addSprite(Sprite sprite).build();
          * */
         public Builder addSprite(Sprite sprite){
             this.sprite = sprite;
@@ -102,16 +103,13 @@ public class Player extends GameObject {
 
         /**
          * Adds specific input buttons to Player
-         * Input is e by default <br>
          * @param up Takes a String KeyEvent.VK_keycode
          * @param down Takes a String KeyEvent.VK_keycode
          * @param left Takes a String KeyEvent.VK_keycode
          * @param right Takes a String KeyEvent.VK_keycode <br> <br>
          * Example usage: <br>
-         * new Player.Builder(String name).addSprite(Sprite sprite).build();
+         * Player player = new Player.Builder(String name).addInput("W","A","S","D").build();
          * */
-        //TODO: FIKSE INPUT doc og metode
-
         public Builder addInput(String up, String down, String left, String right){
             this.up = up;
             this.down = down;
@@ -124,7 +122,7 @@ public class Player extends GameObject {
          * Adds a level variable to a Player <br>
          * @param level Sets the level variable<br> <br>
          * Usage: <br>
-         * new Player.Builder(String name).addLevel(int level).build();
+         * Player player = new Player.Builder(String name).addLevel(int level).build();
          * */
         public Builder addLevel(int level){
             this.level = level;
@@ -133,9 +131,9 @@ public class Player extends GameObject {
 
         /**
          * Adds a xp variable to a Player <br>
-         * @param xp Sets the level variable<br> <br>
+         * @param xp Sets the xp variable <br> <br>
          * Usage: <br>
-         * new Player.Builder(String name).addLevel(int level).build();
+         * Player player = new Player.Builder(String name).addXp(int xp).build();
          * */
         //TODO GjØre ferdig addXp
         public Builder addXp(int xp){
@@ -144,8 +142,20 @@ public class Player extends GameObject {
         }
 
         /**
+         * Adds an attribute variable to a Player <br>
+         * @param name Sets the attribute name <br>
+         * @param value sets the attribute value <br><br>
+         * Example usage: <br>
+         * Player player = new Player.Builder(String name).addAttribute(String name, int value).build();
+         * */
+        public Builder addAttribute(String name, int value){
+            attribute.put(name, value);
+            return this;
+        }
+
+        /**
          * Creates a Player object
-         * @return  Returns a Player object with the given values.
+         * @return  Returns a Player object with the given values
          * */
         public Player build(){return new Player(this);}
 
@@ -180,13 +190,13 @@ public class Player extends GameObject {
         this.left = builder.left;
         this.right = builder.right;
         this.sprite = builder.sprite;
-        //this.controller = new PlayerController(Game.getInput());
-        this.controller = new PlayerController(new Input()); //skal egt ha samme input som display
-
-        //TODO få input til å fungere
+        this.controller = new PlayerController(new Input());
     }
 
 
+    /**
+     * Updates the Player position each game loop
+     */
     @Override
     public void update() {
         int deltaX = 0;
@@ -231,8 +241,12 @@ public class Player extends GameObject {
 
     }
 
+    /**
+     * Creates a default Sprite if none is set
+     * @return The sprite that was created
+     */
     @Override
-    public Image getSprite() {
+    public Image createDefaultSprite() {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = image.createGraphics();
 
@@ -243,22 +257,11 @@ public class Player extends GameObject {
         return image;
     }
 
-
+    /**
+     * @return Returns the position of the Player
+     */
     @Override
     public Position getPosition() {
         return super.getPosition();
     }
-
-    public void setMovementSpeed(int movementSpeed) {
-        this.movementSpeed = movementSpeed;
     }
-
-
-
-   /* public void setPlayerMovespeed(int speed){
-        if (speed > 10){
-            player.setMoveSpeed(10);
-        } else
-            player.setMoveSpeed(speed);
-    } */
-}

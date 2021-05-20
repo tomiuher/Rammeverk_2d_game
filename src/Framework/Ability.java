@@ -11,7 +11,7 @@ public class Ability {
     public static class Builder{
         private String name;
         private int damage, manaCost, cooldown;
-        //private Sprite sprite;
+        private Sprite sprite;
 
         /**
          * Builder is used instead of a regular constructor
@@ -57,32 +57,34 @@ public class Ability {
         }
 
         /**
+         * Adds a Sprite to an Ability object
+         * @param sprite The sprite to be added to the Ability
+         */
+        public Builder addSprite(Sprite sprite) {
+            this.sprite = sprite;
+            return this;
+        }
+
+        /**
          * Creates an Ability object
          * @return  Returns an Ability object with the given values.
          * */
         public Ability build(){
             return new Ability(this);
         }
-
-        /*
-        public Builder addSprite(Sprite sprite) {
-            this.sprite = sprite;
-            return this;
-        }
-         */
-
-
     }
 
     //Skal vi kommentere dette
     private String name;
     private final int damage, manaCost, cooldown;
+    private Sprite sprite;
 
     private Ability(Builder builder) {
         this.name = builder.name;
         this.damage = builder.damage;
         this.cooldown = builder.cooldown;
         this.manaCost = builder.manaCost;
+        this.sprite = builder.sprite;
     }
 
     /**

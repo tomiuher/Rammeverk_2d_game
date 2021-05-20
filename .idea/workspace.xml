@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5fadfd7-1a9e-4e45-b6ad-f15b8bb3c0a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Framework/Ability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Ability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Backend/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Backend/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Backend/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Backend/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Backend/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Backend/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Backend/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Backend/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Framework/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Framework/Npc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Npc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/NpcMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/NpcMovement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Framework/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Framework/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Framework/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Framework/Sprite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +23,23 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -40,6 +60,12 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thkri\OneDrive - Østfold University College\Rammeverk\Rammeverk_2d_game\src" />
+      <recent name="C:\Users\thkri\OneDrive - Østfold University College\Rammeverk\Rammeverk_2d_game" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,18 +81,15 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1621511136914">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1621511136914" />
-    <state x="1920" y="0" width="1424" height="1027" key="dock-window-1" timestamp="1621510717215">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1920" y="0" width="1424" height="1027" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1621510717215" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1621509191300">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1621509191300" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

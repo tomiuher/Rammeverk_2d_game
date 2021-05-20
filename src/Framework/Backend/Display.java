@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+/**
+ * Create a display which is shown on screen <br>
+ * Gets created by the Game class
+ */
 public class Display extends JFrame{
 
     private Canvas canvas;
@@ -14,9 +18,11 @@ public class Display extends JFrame{
     static Input input;
 
 
-
+    /**
+     * Constructor for Display
+     * @param input Input for the game
+     */
     public Display(Input input){
-       // this.input = input;
         setTitle("Main Window");
         setDefaultCloseOperation(EXIT_ON_CLOSE); //closing window stops program
         setResizable(true);
@@ -31,12 +37,16 @@ public class Display extends JFrame{
         addKeyListener(input);
         pack();
 
-        canvas.createBufferStrategy(3); //stops the screen from flickering?
+        canvas.createBufferStrategy(3);
 
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
+    /**
+     * Renders the game with all gameObjects
+     * @param game The game to be rendered
+     */
     public void render(Game game){
         BufferStrategy bufferStrategy = canvas.getBufferStrategy();
         Graphics graphics = bufferStrategy.getDrawGraphics();
@@ -44,7 +54,7 @@ public class Display extends JFrame{
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         game.getGameObjects().forEach(gameObject -> graphics.drawImage(
-                    gameObject.getSprite(),
+                    gameObject.createDefaultSprite(),
                     gameObject.getPosition().getX(),
                     gameObject.getPosition().getY(),
                     null
@@ -54,10 +64,18 @@ public class Display extends JFrame{
         bufferStrategy.show();
     }
 
+    /**
+     * @return Returns the input variable
+     */
     public static Input getInput() {
         return input;
     }
 
+    /**
+     * Sets the window size, is called via Game
+     * @param width The new width of the window
+     * @param height The new height of the window
+     */
     public void setSize(int width, int height) {
         this.height = height;
         this.width = width;

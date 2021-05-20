@@ -20,17 +20,9 @@ public class Game {
     private Player player;
 
 
-    /*public static Input getInput() {
-        return input;
-    }*/
-
-
     private Game(){
-        display = new Display(input); //player burde ha dette input objektet?
+        display = new Display(input);
         gameObjects = new ArrayList<>();
-
-        //Trenger input herfra
-
     }
 
     /**
@@ -50,7 +42,6 @@ public class Game {
     public void addPlayer(Player player){
         this.player = player;
         gameObjects.add(player);
-
     }
 
     /**
