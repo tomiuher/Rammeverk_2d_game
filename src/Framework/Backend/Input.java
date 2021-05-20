@@ -11,7 +11,7 @@ public class Input implements KeyListener {
         pressed = new boolean[255];
     }
 
-    public boolean isPressed(int keyCode){
+    protected boolean isPressed(int keyCode){
         return pressed[keyCode];
     }
 
@@ -28,6 +28,5 @@ public class Input implements KeyListener {
         pressed[e.getKeyCode()] = false;
     }
 
-    /*@Override
-    public void rightMousePressed */
+
 }

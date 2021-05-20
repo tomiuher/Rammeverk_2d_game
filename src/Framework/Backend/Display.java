@@ -13,17 +13,6 @@ public class Display extends JFrame{
     int height = 400;
     static Input input;
 
-    public static Input getInput() {
-        return input;
-    }
-
-    public void setSize(int width, int height) {
-        this.height = height;
-        this.width = width;
-        canvas.setPreferredSize(new Dimension(width, height));
-
-    }
-
 
 
     public Display(Input input){
@@ -63,5 +52,16 @@ public class Display extends JFrame{
 
         graphics.dispose();
         bufferStrategy.show();
+    }
+
+    public static Input getInput() {
+        return input;
+    }
+
+    public void setSize(int width, int height) {
+        this.height = height;
+        this.width = width;
+        canvas.setPreferredSize(new Dimension(width, height));
+
     }
 }
