@@ -34,8 +34,10 @@ public class Game {
     }
 
     /**
-     *
+     * Gives a game object which the user can refer to
      * @return returns the game object singleton
+     * Example usage: <br>
+     * Game game = Game.getGame();
      */
     public static Game getGame(){
         return game;
@@ -97,7 +99,7 @@ public class Game {
     }
 
     /**
-     * @return returns all the GameObjects
+     * @return returns all the gameObjects
      */
     public List<GameObject> getGameObjects() {
         return gameObjects;

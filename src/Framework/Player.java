@@ -41,7 +41,7 @@ public class Player extends GameObject {
          * Has a default value of 50x50 if not set <br>
          * @param width Sets the width variable 
          * @param height Sets the height variable <br> <br>     
-         * Usage: <br>
+         * Example usage: <br>
          * new Player.Builder(String name).addSize(int width, int height).build();
          * */
         public Builder addSize(int width, int height){
@@ -55,7 +55,7 @@ public class Player extends GameObject {
          * Has a default value of 100x100 if not set <br>
          * @param posX Sets the X variable 
          * @param posY Sets the Y variable <br> <br>     
-         * Usage: <br>
+         * Example usage: <br>
          * new Player.Builder(String name).addPosition(int posX, int posY).build();
          * */
         public Builder addPosition(int posX, int posY){
@@ -68,7 +68,7 @@ public class Player extends GameObject {
          * Adds a specific movementSpeed to a Player 
          * Has a default value of 5 if not set <br>
          * @param movementSpeed Sets the movementSpeed variable <br> <br>     
-         * Usage: <br>
+         * Example usage: <br>
          * new Player.Builder(String name).addMovementSpeed(int movementSpeed).build();
          * */
         public Builder addMovementSpeed(int movementSpeed){
@@ -80,7 +80,7 @@ public class Player extends GameObject {
          * Adds a movement speed multiplier to a Player
          * Used to add either walking or running <br>
          * @param movementSpeedMultiplier Sets the movementSpeedMultiplier variable <br> <br>
-         * Usage: <br>
+         * Example usage: <br>
          * new Player.Builder(String name).addMovementSpeedMultiplier(double movementSpeedMultiplier).build();
          * */
         public Builder addMovementSpeedMultiplier(double movementSpeedMultiplier){
@@ -92,7 +92,7 @@ public class Player extends GameObject {
          * Adds a specific sprite to a Player
          * Sprite is set to a square by default <br>
          * @param sprite Takes a Sprite object and adds it to a Player<br> <br>
-         * Usage: <br>
+         * Example usage: <br>
          * new Player.Builder(String name).addSprite(Sprite sprite).build();
          * */
         public Builder addSprite(Sprite sprite){
@@ -104,10 +104,10 @@ public class Player extends GameObject {
          * Adds specific input buttons to Player
          * Input is e by default <br>
          * @param up Takes a String KeyEvent.VK_keycode
-         * @param down
-         * @param left
-         * @param right <br> <br>
-         * Usage: <br>
+         * @param down Takes a String KeyEvent.VK_keycode
+         * @param left Takes a String KeyEvent.VK_keycode
+         * @param right Takes a String KeyEvent.VK_keycode <br> <br>
+         * Example usage: <br>
          * new Player.Builder(String name).addSprite(Sprite sprite).build();
          * */
         //TODO: FIKSE INPUT doc og metode
